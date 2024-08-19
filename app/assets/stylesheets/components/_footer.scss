@@ -1,0 +1,65 @@
+// _footer.scss
+
+.footer {
+  background: white; // Match the navbar background
+  border-top: 1px solid #e9ecef;
+  padding: 1rem 1rem; // Match the navbar's padding (default: 16px top/bottom, 16px left/right)
+  text-align: center;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-brand {
+      img {
+        width: 40px;
+        margin-top: 0.5rem; // Adds space between the logo and the top border
+      }
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .nav-link {
+          color: #6c757d;
+          padding: 0;
+          &:hover {
+            color: #343a40;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Layout Styles for Sticky Footer
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.flex-fill {
+  flex: 1;
+}
