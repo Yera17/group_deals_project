@@ -1,1 +1,53 @@
-// Specific CSS for your home-page
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if there's not enough space */
+  justify-content: space-around; /* Centers the items horizontally with space around them */
+  padding: 20px; /* Adds padding around the container */
+}
+
+#categories {
+  list-style: none; /* Removes bullets from the list */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  display: flex;
+  flex-wrap: wrap; /* Enables wrapping of items if they don't fit in one line */
+  gap: 20px; /* Adds spacing between the cards */
+}
+
+#categories li {
+  flex: 1 1 calc(50% - 40px); /* Ensures 3 cards per row, accounting for the gap */
+  margin: 10px; /* Adds margin around the cards */
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 200px; /* Fixed height for the cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+a.rrr {
+  color: white; /* Ensures the text color is white */
+  text-decoration: none; /* Removes underline from the text */
+}
+
+.home-title {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 2%;
+}
+
+.para {
+  padding: 3%;
+}
+
+.col-md-6 {
+  align-content: center;
+}
