@@ -7,3 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Deal.create({ name: "Netflix", price: 20, description: "Netflix family subscription for 5 people", category: "video", duration: "3 month", number_of_user})
