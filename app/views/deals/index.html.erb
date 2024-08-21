@@ -4,7 +4,7 @@
     <% @deals.each do |deal| %>
       <li>
         <div class="card" style="background-image: url('<%= "https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5.fit_scale.size_1028x578.v1582751026.png" %>');">
-          <a href="#" class="rrr" role="button"><%= deal.name %></a>
+          <%= link_to deal.name, deal_path(deal) %>
         </div>
       </li>
     <% end %>
