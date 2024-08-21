@@ -1,0 +1,42 @@
+.subscriptions, .deals{
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.sub-card {
+  width: 18rem; /* Set the width of the card */
+  border: 1px solid #ddd; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  overflow: hidden; /* Ensure rounded corners for child elements */
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+.sub-card-header {
+  background-color: #f8f9fa; /* Light grey background for the header */
+  padding: 10px 15px; /* Padding inside the header */
+  border-bottom: 1px solid #ddd; /* Border below the header */
+}
+
+.sub-card-header h2 {
+  margin: 0; /* Remove default margin from h2 */
+  font-size: 1.25rem; /* Set font size */
+  color: #333; /* Text color */
+}
+
+.sub-list-group {
+  list-style-type: none; /* Remove default list styles */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.sub-list-group-item {
+  padding: 10px 15px; /* Padding inside each list item */
+  border-bottom: 1px solid #ddd; /* Border between items */
+  background-color: #fff; /* White background for items */
+}
+
+.sub-list-group-item:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
