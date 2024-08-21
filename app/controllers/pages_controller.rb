@@ -12,7 +12,7 @@ class PagesController < ApplicationController
         "podcast" => "https://images.unsplash.com/photo-1504386106331-3e4e71712b38",
         "audiobook" => "https://images.unsplash.com/photo-1512820790803-83ca734da794"
       }
-
+  end
 
   def manage
     @subscriptions = current_user.subscriptions
