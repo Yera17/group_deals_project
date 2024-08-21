@@ -1,8 +1,10 @@
 .container {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line if there's not enough space */
-  justify-content: space-around; /* Centers the items horizontally with space around them */
+  flex-wrap: nowrap; /* Ensures the items don't wrap and stay on the same line */
+  justify-content: space-between; /* Spreads items across the container */
   padding: 20px; /* Adds padding around the container */
+  width: 100%; /* Full width for the container */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
 }
 
 #categories {
@@ -10,13 +12,24 @@
   padding: 0; /* Removes padding */
   margin: 0; /* Removes margin */
   display: flex;
-  flex-wrap: wrap; /* Enables wrapping of items if they don't fit in one line */
-  gap: 20px; /* Adds spacing between the cards */
+  justify-content: space-between; /* Spread items evenly */
+  width: 100%; /* Occupy full width of the container */
+  padding: 0; /* No internal padding on the list */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  gap: 0; /* Removes the gap between items */
 }
 
 #categories li {
-  flex: 1 1 calc(50% - 40px); /* Ensures 3 cards per row, accounting for the gap */
-  margin: 10px; /* Adds margin around the cards */
+  flex: 1; /* Ensure each item occupies equal space */
+  margin: 0 10px; /* Optional: Add space between items */
+  text-align: center; /* Center-align text within each item */
+  box-sizing: border-box;
+}
+
+#categories li img {
+  width: 100%; /* Make the image responsive and occupy the full width of the list item */
+  height: auto; /* Keep the aspect ratio of the images */
+  border-radius: 12px; /* Optional: round corners for a smoother look */
 }
 
 .card {
@@ -46,16 +59,36 @@ a.rrr {
 
 .para {
   padding: 3%;
+  text-align: center;
 }
 
 .col-md-6 {
   align-content: center;
 }
 
-.btn {
-  font-size: 2rem;
-  color: white;
-  .btn:hover{
-    color: red;
-  }
+#subdeals {
+  list-style: none; /* Removes bullets from the list */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  display: flex;
+  justify-content: space-between; /* Spread items evenly */
+  width: 100%; /* Occupy full width of the container */
+  padding: 0; /* No internal padding on the list */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  gap: 0; /* Removes the gap between items */
+}
+
+/* Subdeal item styling */
+#subdeals li {
+  flex: 1; /* Ensure each item occupies equal space */
+  margin: 0 10px; /* Optional: Add space between items */
+  text-align: center; /* Center-align text within each item */
+  box-sizing: border-box; /* Ensure padding and borders are included in the width calculation */
+}
+
+/* Ensure images inside the subdeal items are responsive */
+#subdeals li img {
+  width: 100%; /* Make the image responsive and occupy the full width of the list item */
+  height: auto; /* Keep the aspect ratio of the images */
+  border-radius: 12px; /* Optional: round corners for a smoother look */
 }

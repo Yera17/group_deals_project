@@ -1,2 +1,13 @@
-<h1>Deals#index</h1>
-<p>Find me in app/views/deals/index.html.erb</p>
+<h1 class="home-title">Deals for TV</h1>
+<p class="para">Stream your favorite movies, TV shows, and original series with Netflix. Join a group and share the binge-worthy entertainment!</p>
+<div class="container">
+  <ul id="subdeals">
+    <% @subdeals_with_images.each do |subdeal, image_url| %>
+      <li>
+        <div class="card" style="background-image: url('<%= image_url %>');">
+          <a href="#" class="rrr" role="button"><%= subdeal %></a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
