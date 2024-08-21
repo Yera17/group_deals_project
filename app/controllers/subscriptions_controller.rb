@@ -3,6 +3,8 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
+    @subscription = Subscription.new({ deal_id: params[:deal_id], user_id: current_user })
+    redirect_to manage_path
   end
 
   def update
