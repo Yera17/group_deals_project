@@ -1,23 +1,43 @@
 <h1>Manage Your Deals & Subscriptions</h1>
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    <h2>Your Subscriptions</h2>
-  </div>
-  <ul class="list-group list-group-flush">
-    <% @subscriptions.each do |subscription| %>
-      <li class="list-group-item"><%= subscription.deal.name %></li>
-    <% end %>
-  </ul>
-</div>
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    <h2>Deals to Approve</h2>
-  </div>
-  <ul class="list-group list-group-flush">
-    <% @deals.each do |deal| %>
-      <% deal.subscriptions.each do |subscription| %>
-          <li class="list-group-item"><%= deal.name %> - <%= link_to "Approve", subscription_path(subscription, approved: true), data: {turbo_method: patch} %> <%= link_to "Disapprove", subscription_path(subscription, approved: false), data: {turbo_method: patch} %></li>
+<div class="d-flex">
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <h2>Your Subscriptions</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% @subscriptions.each do |subscription| %>
+        <% if subscription.approved == true %>
+          <li class="list-group-item"><%= subscription.deal.name %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <h2>Deals to Approve</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% @deals.each do |deal| %>
+        <% deal.subscriptions.each do |subscription| %>
+          <% if subscription.checked == false %>
+            <li class="list-group-item"><%= deal.name %> - <%= link_to "Approve", subscription_path(subscription, approved: true), data: {turbo_method: :patch} %> <%= link_to "Disapprove", subscription_path(subscription, approved: false), data: {turbo_method: :patch} %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <h2>Approved Deals</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% @deals.each do |deal| %>
+        <% deal.subscriptions.each do |subscription| %>
+          <% if subscription.approved == true %>
+            <li class="list-group-item"><%= deal.name %> - <%= subscription.user.email %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>

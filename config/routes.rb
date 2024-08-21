@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :subscriptions, only: [:edit, :update]
   resources :deals, only: [:index, :show, :new, :create] do
+    
     resources :subscriptions, only: [:new, :create]
   end
   get "/manage", to: "pages#manage", as: :manage

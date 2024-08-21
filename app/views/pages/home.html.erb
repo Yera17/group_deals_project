@@ -6,7 +6,7 @@
     <% @categories_with_images.each do |category, image_url| %>
       <li>
         <div class="card" style="background-image: url('<%= image_url %>');">
-          <a href="#" class="rrr" role="button"><%= category %></a>
+          <%= link_to category, deals_path(category: category), class: "btn"%>
         </div>
       </li>
     <% end %>

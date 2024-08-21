@@ -51,3 +51,11 @@ a.rrr {
 .col-md-6 {
   align-content: center;
 }
+
+.btn {
+  font-size: 2rem;
+  color: white;
+  .btn:hover{
+    color: red;
+  }
+}
