@@ -1,12 +1,14 @@
-<div>
-  <h1>Add a Deal</h1>
+<div class="form-container">
+  <h1 class="form-h1">Add a Deal</h1>
   <%= simple_form_for @deal do |f| %>
     <%= f.input :name %>
     <%= f.input :price %>
     <%= f.input :description %>
-    <%= f.select :category, options_for_select(["music", "video", "TV", "sports", "gaming", "podcast", "audiobook"]) %>
+    <%= f.select :category, options_for_select(["Select a category:", "music", "video", "TV", "sports", "gaming", "podcast", "audiobook"]), {}, { class: 'select' } %>
     <%= f.input :duration %>
     <%= f.input :number_of_users %>
-    <%= f.button :submit %>
+    <div class="ss">
+    <%= f.button :submit, class: 'submit' %>
+    </div>
   <% end %>
 </div>
