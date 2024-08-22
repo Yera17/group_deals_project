@@ -19,7 +19,13 @@ class DealsController < ApplicationController
   end
 
   def show
+    @user_deal = ""
     @deal = Deal.find(params[:id])
+    current_user.subscriptions.each do |sub|
+      if @deal == sub.deal
+        @user_deal = @deal
+      end
+    end
   end
 
   private
