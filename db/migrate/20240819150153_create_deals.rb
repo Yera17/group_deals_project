@@ -3,7 +3,7 @@ class CreateDeals < ActiveRecord::Migration[7.1]
     create_table :deals do |t|
       t.string :name
       t.float :price
-      t.string :description
+      t.text :description
       t.string :category
       t.string :duration
       t.string :number_of_users

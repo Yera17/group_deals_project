@@ -17,5 +17,6 @@ class PagesController < ApplicationController
   def manage
     @subscriptions = current_user.subscriptions
     @deals = current_user.deals
+    @received_subscriptions = current_user.received_subscriptions
   end
 end
