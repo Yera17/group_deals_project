@@ -1,12 +1,16 @@
-<h1 class="home-title">Deals for <%= @category.capitalize %></h1>
-<div class="container">
-  <ul id="subdeals">
+<div class="container d-flex flex-column">
+  <div class="mb-5">
+    <h1 class="home-title">Deals for <%= @category.capitalize %></h1>
+  </div>
+  <div class="row g-3">
     <% @deals.each do |deal| %>
-      <li>
-        <div class="card" style="background-image: url('<%= "https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5.fit_scale.size_1028x578.v1582751026.png" %>');">
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image: url('<%= "#{deal.image_path}" %>');">
           <%= link_to deal.name, deal_path(deal) %>
         </div>
       </li>
+    </div>
     <% end %>
-  </ul>
+  </div>
+
 </div>

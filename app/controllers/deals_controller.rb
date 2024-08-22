@@ -19,7 +19,17 @@ class DealsController < ApplicationController
   end
 
   def show
+    @user_deal = ""
     @deal = Deal.find(params[:id])
+    if user_signed_in?
+      current_user.subscriptions.each do |sub|
+        if @deal == sub.deal
+          @user_deal = @deal
+        end
+      end
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private
