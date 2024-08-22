@@ -1,4 +1,4 @@
-.container {
+.ourcontainer {
   display: flex;
   flex-wrap: nowrap; /* Ensures the items don't wrap and stay on the same line */
   justify-content: space-between; /* Spreads items across the container */
@@ -35,7 +35,7 @@
 .card {
   background-size: cover;
   background-position: center;
-  height: 200px; /* Fixed height for the cards */
+  height: 230px; /* Fixed height for the cards */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,3 +193,62 @@ body {
     display: flex;
     justify-content: center;
   }
+
+  //new code for bottomcards
+
+  /* Specific container styling for GroupDeals */
+.group-deals-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+/* Card container styling */
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+/* Individual bottomcard styling */
+.bottomcard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 45%; /* Adjusts for side-by-side appearance */
+  transition: transform 0.3s ease;
+}
+
+.bottomcard:hover {
+  transform: translateY(-10px); /* Subtle hover effect */
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.5rem;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Description styling */
+.card-description {
+  font-size: 1rem;
+  color: #7A7A7A;
+  line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bottomcard {
+    width: 100%;
+  }
+}

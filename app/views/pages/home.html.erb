@@ -1,21 +1,42 @@
 <div class="banner">
-  <%= image_tag "banner.png", alt: "banner"%>
+ <%= image_tag "banner.png", alt: "banner"%>
 </div>
-<div class="container">
-  <ul id="categories">
-    <% @categories_with_images.each do |category, image_url| %>
-      <li>
-        <%= link_to deals_path(category: category), class: "card-link" do %>
-          <div class="card" style="background-image: url('<%= image_url %>');">
-          <div class="card-overlay"></div>
-            <div class="card-content">
-              <%= category %>
-            </div>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
- </div>
+<div class="ourcontainer">
+ <ul id="categories">
+   <% @categories_with_images.each do |category, image_url| %>
+     <li>
+       <%= link_to deals_path(category: category), class: "card-link" do %>
+         <div class="card" style="background-image: url('<%= image_url %>');">
+         <div class="card-overlay"></div>
+           <div class="card-content">
+             <%= category %>
+           </div>
+         </div>
+       <% end %>
+     </li>
+   <% end %>
+ </ul>
+</div>
 
-<p class="para">GroupDeals is a platform that allows users to subscribe to popular services, such as Netflix and Spotify, with shared accounts. Perfect for families, friends, or groups, GroupDeals helps you split the cost of subscriptions while enjoying premium services together from a single account. Save money, share benefits, and streamline your subscriptions with ease!</p>
+
+<%# <p class="para">GroupDeals is a platform that allows users to subscribe to popular services, such as Netflix and Spotify, with shared accounts. Perfect for families, friends, or groups, GroupDeals helps you split the cost of subscriptions while enjoying premium services together from a single account. Save money, share benefits, and streamline your subscriptions with ease!</p> %>
+
+
+<div class="group-deals-container">
+ <div class="cards-wrapper">
+   <div class="bottomcard">
+     <h2 class="card-title">Share the Love, Split the Cost</h2>
+     <p class="card-description">
+       Why pay full price when you can pay less? With GroupDeals, you can team up with your friends, family, or even strangers with shared interests to split the cost of popular subscriptions like Netflix, Spotify, and more. It’s like a digital piggy bank—more people, more savings!
+     </p>
+   </div>
+
+
+   <div class="bottomcard">
+     <h2 class="card-title">Enjoy Premium Together</h2>
+     <p class="card-description">
+       Get all the premium features you love without any of the hassle. GroupDeals simplifies sharing subscriptions with a single, easy-to-manage account. Save money, streamline your services, and enjoy your favorite music, TV, gaming, and more—together.
+     </p>
+   </div>
+ </div>
+</div> %>
