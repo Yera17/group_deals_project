@@ -30,7 +30,7 @@
     </div>
     <ul class="sub-list-group list-group-flush">
       <% @subscriptions.each do |subscription| %>
-        <% if subscription.approved == false %>
+        <% if subscription.checked == true && subscription.approved == false %>
           <li class="sub-list-group-item"><%= subscription.deal.name %> by <%= subscription.deal.user.email %></li>
         <% end %>
       <% end %>
