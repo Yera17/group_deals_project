@@ -99,3 +99,22 @@ a {
     color: red;
   }
 }
+
+// BANNER
+
+.banner {
+  background-image: asset-url("banner-background");
+  background-size: auto;
+  height: 350px;
+  margin: 0;
+}
+
+.banner img {
+  width: 100%;
+  // height: 100%;
+  object-fit: cover;
+
+}
+body {
+  background-color: rgb(246, 242, 242);
+}
