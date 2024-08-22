@@ -5,7 +5,7 @@
     <h4>Price Per Month: <%= "%.2f" % @deal.price %> <i class="fa-solid fa-euro-sign"></i> </h4>
   </div>
   <div class="ms-auto d-flex flex-column m-4">
-    <img src <%= @deal.image_path %> alt="" style="width: 800px">
+    <img src=<%= @deal.image_path %> alt="" style="width: 800px">
     <% if @deal.user != current_user && @deal != @user_deal %>
       <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn btn-primary mt-3" %>
     <% elsif @deal == @user_deal %>
