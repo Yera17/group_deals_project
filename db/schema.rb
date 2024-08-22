@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_104200) do
   create_table "deals", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.text "description"
+    t.string "description"
     t.string "category"
     t.string "duration"
     t.string "number_of_users"
