@@ -1,26 +1,23 @@
-// _footer.scss
-
 .footer {
   background: white; // Match the navbar background
   border-top: 1px solid #e9ecef;
-  padding: 1rem 1rem; // Match the navbar's padding (default: 16px top/bottom, 16px left/right)
+  padding: 3rem 1rem; // Match the navbar's padding
   text-align: center;
+  color: white;
 
   .container-fluid {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .navbar-brand {
-      img {
-        width: 40px;
-        margin-top: 0.5rem; // Adds space between the logo and the top border
-      }
+    .col-md-6.text-md-end {
+      margin-top: 1rem; // Adds space between the list and the top border
     }
 
     ul {
       padding-left: 0;
       list-style: none;
+      margin-top: 1rem; // Adds space between the links and the top border
 
       li {
         display: inline-block;
@@ -31,7 +28,7 @@
         }
 
         .nav-link {
-          color: #6c757d;
+          color: #ffffff;
           padding: 0;
           &:hover {
             color: #343a40;
@@ -57,7 +54,7 @@ html, body {
 }
 
 .min-vh-100 {
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 .flex-fill {
