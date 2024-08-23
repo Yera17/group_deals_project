@@ -1,0 +1,82 @@
+/* Wrapper for the entire form */
+.custom-login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the login form takes up full height */
+  background-color: #f0f2f5;
+}
+
+.custom-login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Adding some margin and alignment for the heading */
+.custom-login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Styling the form input fields */
+.custom-form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-form-inputs .input {
+  margin-bottom: 15px;
+}
+
+/* Updated Remember me styling */
+.custom-remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.custom-remember-me input {
+  margin-right: 8px;
+  transform: scale(1.2); /* Slightly increase the size of the checkbox */
+}
+
+/* Styling form actions */
+.custom-form-actions {
+  text-align: center;
+}
+
+.custom-form-actions button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-form-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjusting inputs to look better */
+.custom-form-inputs input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .custom-login-container {
+    padding: 15px;
+  }
+}
