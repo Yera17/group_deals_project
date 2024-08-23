@@ -26,4 +26,14 @@
       <% end %>
     </div>
   </div>
+  <div class="deal-media">
+    <img src=<%= @deal.image_path %> alt="Deal image">
+    <% if @deal.user != current_user && @deal != @user_deal %>
+      <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn subscribe-btn" %>
+    <% elsif @deal == @user_deal %>
+      <%= link_to "Subscribed", manage_path, class: "btn subscribed-btn disabled" %>
+    <% else %>
+      <p>This is your deal</p>
+    <% end %>
+  </div>
 </div>
