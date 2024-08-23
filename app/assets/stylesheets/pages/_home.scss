@@ -286,48 +286,6 @@ body {
     margin-top: 20px;
   }
 }
-
-.group-deals-container {
-  // Container for the entire section
-  padding: 20px;
-  background-color: #f7f7f7;
-
-  .cards-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    @media(min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .bottomcard {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      flex: 1;
-
-      // Ensures all cards have equal height
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      .card-title {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: #333;
-      }
-
-      .card-description {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.5;
-      }
-    }
-  }
-
   /* Specific container styling for GroupDeals */
 .group-deals-container {
   width: 100%;
@@ -383,6 +341,7 @@ body {
   .bottomcard {
     width: 100%;
   }
+}
 
 .danger-btn {
   display: inline-block;
@@ -398,3 +357,4 @@ body {
   margin-top: 1rem;
   width: 100%;
   max-width: 250px;
+}
