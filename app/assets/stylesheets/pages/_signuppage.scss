@@ -1,70 +1,65 @@
-/* This wrapper centers the signup form and applies styles specifically to the signup page */
+/* Center the signup wrapper, similar to the login page */
 .custom-signup-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensures the signup form takes up full height */
-  background-color: #f0f2f5;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Similar background color to login page */
 }
 
+/* Center the signup container within the page */
 .custom-signup-container {
   width: 100%;
   max-width: 400px;
+  background-color: white;
   padding: 20px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Adding some margin and alignment for the heading */
-.custom-signup-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-/* Styling the form input fields */
-.custom-form-inputs {
-  display: flex;
-  flex-direction: column;
-}
-
-.custom-form-inputs .input {
-  margin-bottom: 15px;
-}
-
-/* Styling form actions */
-.custom-form-actions {
-  text-align: center;
-}
-
-.custom-form-actions button {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.custom-form-actions button:hover {
-  background-color: #218838;
-}
-
-/* Adjusting inputs to look better */
+/* Ensure the form inputs are styled uniformly */
 .custom-form-inputs input {
   width: 100%;
+  margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .custom-signup-container {
-    padding: 15px;
-  }
+/* Style the submit button */
+.custom-form-actions button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a hover effect to the button */
+.custom-form-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the error notification */
+.error_notification {
+  margin-bottom: 20px;
+}
+
+/* Style the links at the bottom */
+.custom-signup-container a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff; /* Ensure the link color is always visible */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Optional: Adjust font size */
+}
+
+/* Optional: Add a hover effect to the link */
+.custom-signup-container a:hover {
+  text-decoration: underline;
 }
