@@ -7,6 +7,12 @@
       <p>Available Spots: <%= @available_spots %></p>
       <p><%= @deal.description %></p>
       <h4>Price Per Month: <%= "%.2f" % @deal.price %> <i class="fa-solid fa-euro-sign"></i></h4>
+      <% if  @deal.user == current_user %>
+        <%= link_to "Edit", edit_deal_path(@deal), class: "btn subscribe-btn" %>
+        <%= link_to "Delete",
+                              deal_path(@deal),
+                              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger danger-btn"%>
+      <% end %>
     </div>
     <div class="deal-media">
       <img src=<%= @deal.image_path %> alt="deal picture">
@@ -18,22 +24,7 @@
         <%= link_to "Subscribed", manage_path, class: "btn subscribed-btn disabled" %>
       <% else %>
         <p>This is your deal</p>
-        <%= link_to "Edit", edit_deal_path(@deal), class: "btn subscribed-btn" %>
-        <%= link_to "Delete",
-                              deal_path(@deal),
-                              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
       <% end %>
     </div>
-  </div>
-  <div class="deal-media">
-    <img src=<%= @deal.image_path %> alt="Deal image">
-    <% if @deal.user != current_user && @deal != @user_deal %>
-      <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn subscribe-btn" %>
-    <% elsif @deal == @user_deal %>
-      <%= link_to "Subscribed", manage_path, class: "btn subscribed-btn disabled" %>
-    <% else %>
-      <p>This is your deal</p>
-    <% end %>
   </div>
 </div>
