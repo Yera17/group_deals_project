@@ -16,6 +16,7 @@ class DealsController < ApplicationController
   def index
     @deals = Deal.where(category: params[:category])
     @category = params[:category]
+    @mydeals = Deal.where(user: current_user)
   end
 
   def show

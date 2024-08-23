@@ -1,0 +1,73 @@
+.deal-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.deal-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.deal-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.deal-attributes-container {
+  margin-top: 15px;
+}
+
+.deal-title {
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
+.deal-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.deal-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.danger-button {
+  background-color: #e74c3c; // Red background for danger
+  color: white; // White text
+  border: none; // No border
+  border-radius: 5px; // Rounded corners
+  padding: 10px 20px; // Padding for a nice size
+  font-size: 16px; // Font size
+  cursor: pointer; // Pointer cursor on hover
+  transition: background-color 0.3s ease, transform 0.2s ease; // Smooth transitions
+
+  &:hover {
+    background-color: #c0392b; // Darker red on hover
+    transform: translateY(-2px); // Slight lift effect on hover
+  }
+
+  &:active {
+    background-color: #a93226; // Even darker red when the button is clicked
+    transform: translateY(0); // Reset lift effect when clicked
+  }
+
+  &:focus {
+    outline: none; // Remove default outline
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5); // Add a red shadow for accessibility
+  }
+
+  &:disabled {
+    background-color: #e74c3c; // Same background
+    opacity: 0.6; // Reduced opacity to indicate disabled state
+    cursor: not-allowed; // Change cursor to indicate it's not clickable
+  }
+}
