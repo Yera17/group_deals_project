@@ -1,6 +1,6 @@
 class Deal < ApplicationRecord
   belongs_to :user
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   CATEGORIES = ["music", "video", "TV", "sports", "gaming", "podcast", "audiobook"]
 
   validates :name, :duration, :number_of_users, presence: true

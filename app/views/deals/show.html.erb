@@ -1,36 +1,29 @@
-<div class="deal-c">
-<div class="deal-wrapper">
-  <div class="deal-info">
-    <h1><%= @deal.name %></h1>
-    <p>Duration: <%= @deal.duration %></p>
-    <p>Number of users: <%= @deal.number_of_users %></p>
-    <p><%= @deal.description %></p>
-    <h4>Price Per Month: <%= "%.2f" % @deal.price %> <i class="fa-solid fa-euro-sign"></i></h4>
+<div class="dealcc">
+  <div class="deal-wrapper">
+    <div class="deal-info">
+      <h1><%= @deal.name %></h1>
+      <p>Duration: <%= @deal.duration %></p>
+      <p>Number of users: <%= @deal.number_of_users %></p>
+      <p>Available Spots: <%= @available_spots %></p>
+      <p><%= @deal.description %></p>
+      <h4>Price Per Month: <%= "%.2f" % @deal.price %> <i class="fa-solid fa-euro-sign"></i></h4>
+    </div>
+    <div class="deal-media">
+      <img src=<%= @deal.image_path %> alt="deal picture">
+      <% if @available_spots == 0 %>
+        <p>You can't subscribe! No more available spots.</p>
+      <% elsif @deal.user != current_user && @deal != @user_deal %>
+        <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn subscribe-btn" %>
+      <% elsif @deal == @user_deal %>
+        <%= link_to "Subscribed", manage_path, class: "btn subscribed-btn disabled" %>
+      <% else %>
+        <p>This is your deal</p>
+        <%= link_to "Edit", edit_deal_path(@deal), class: "btn subscribed-btn" %>
+        <%= link_to "Delete",
+                              deal_path(@deal),
+                              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      <% end %>
+    </div>
   </div>
-  <div class="deal-media">
-    <% case @deal.category %>
-       <% when "music" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/000/559/411/large_2x/vector-a-musical-symbol.jpg" alt="Music Deal">
-      <% when "video" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/000/644/657/original/vector-video-icon-symbol-sign.jpg" alt="Video Deal">
-      <% when "TV" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/010/157/977/non_2x/tv-icon-sign-symbol-design-free-png.png" alt="TV Deal">
-      <% when "sports" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/000/348/985/original/vector-indoor-sport-game-athletic-set-icon-symbol-sign-pictogram.jpg" alt="Sports Deal">
-      <% when "gaming" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/000/366/871/original/video-game-vector-icon.jpg" alt="Gaming Deal">
-      <% when "podcast" %>
-        <img src="https://static.vecteezy.com/system/resources/previews/002/157/611/original/illustrations-concept-design-podcast-channel-free-vector.jpg" alt="Podcast Deal">
-      <% when "audiobook" %>
-        <img src="https://cdn-icons-png.flaticon.com/512/865/865552.png" alt="Audiobook Deal">
-    <% end %>
-    <% if @deal.user != current_user && @deal != @user_deal %>
-      <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn subscribe-btn" %>
-    <% elsif @deal == @user_deal %>
-      <%= link_to "Subscribed", manage_path, class: "btn subscribed-btn disabled" %>
-    <% else %>
-      <p>This is your deal</p>
-    <% end %>
-  </div>
-</div>
 </div>
