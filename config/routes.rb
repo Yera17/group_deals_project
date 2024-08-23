@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :subscriptions, only: [:edit, :update]
-  resources :deals, only: [:index, :show, :new, :create] do
-    
+  resources :deals, only: [:index, :show, :new, :create, :edit, :update] do
     resources :subscriptions, only: [:new, :create]
   end
   get "/manage", to: "pages#manage", as: :manage
