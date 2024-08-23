@@ -1,16 +1,27 @@
+
 <div class="container d-flex flex-column">
   <div class="mb-5">
     <h1 class="home-title">Deals for <%= @category.capitalize %></h1>
   </div>
   <div class="row g-3">
     <% @deals.each do |deal| %>
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: url('<%= "#{deal.image_path}" %>');">
-          <%= link_to deal.name, deal_path(deal) %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Main container for each deal -->
+        <div class="deal-card">
+          <!-- Image container -->
+          <div class="deal-image-container">
+            <img src="<%= asset_path(deal.image_path) %>" alt="<%= deal.name %>" class="deal-image">
+          </div>
+
+          <!-- Attributes container -->
+          <div class="deal-attributes-container">
+            <h2 class="deal-title"><%= deal.name %></h2>
+            <p class="deal-description"><%= deal.description %></p>
+            <p class="deal-price">$<%= deal.price %></p>
+            <%= link_to 'View Deal', deal_path(deal), class: 'btn btn-primary' %>
+          </div>
         </div>
-      </li>
-    </div>
+      </div>
     <% end %>
   </div>
-
 </div>
