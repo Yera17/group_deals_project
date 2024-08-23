@@ -1,0 +1,21 @@
+<div class="banner">
+  <%= image_tag "banner.png", alt: "banner"%>
+</div>
+<div class="container">
+  <ul id="categories">
+    <% @categories_with_images.each do |category, image_url| %>
+      <li>
+        <%= link_to deals_path(category: category), class: "card-link" do %>
+          <div class="card" style="background-image: url('<%= image_url %>');">
+          <div class="card-overlay"></div>
+            <div class="card-content">
+              <%= category %>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+ </div>
+
+<p class="para">GroupDeals is a platform that allows users to subscribe to popular services, such as Netflix and Spotify, with shared accounts. Perfect for families, friends, or groups, GroupDeals helps you split the cost of subscriptions while enjoying premium services together from a single account. Save money, share benefits, and streamline your subscriptions with ease!</p>

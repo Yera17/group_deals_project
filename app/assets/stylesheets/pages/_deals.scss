@@ -1,0 +1,65 @@
+// Variables for easy customization
+$gutter: 16px;
+$columns-md: 2;
+
+// Mixins for reusable code
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// Grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter;
+  margin-left: -$gutter;
+}
+
+.col {
+  padding-right: $gutter;
+  padding-left: $gutter;
+  margin-bottom: $gutter;
+
+  // Default full width for small screens
+  flex: 0 0 100%;
+  max-width: 100%;
+
+  @include respond-to(md) {
+    // 50% width for medium screens and above
+    flex: 0 0 (100% / $columns-md);
+    max-width: (100% / $columns-md);
+  }
+}
+
+// deal-Card styling
+.deal-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &-body {
+    padding: 16px;
+    color: black;
+    .deal-card-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .deal-card-text {
+      font-size: 1rem;
+      color: #666;
+    }
+  }
+}

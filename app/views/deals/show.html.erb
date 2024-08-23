@@ -1,0 +1,26 @@
+<div class="d-flex">
+  <div class="m-4">
+    <h1><%= @deal.name %></h1>
+    <p><%= @deal.description %></p>
+    <p>Host's username: <%= @deal.user.username %></p>
+    <p>Duration: <%= @deal.duration %></p>
+    <p>Number of users: <%= @deal.number_of_users %></p>
+
+    <h4>Price Per Month: <%= "%.2f" % @deal.price %> <i class="fa-solid fa-euro-sign"></i> </h4>
+  </div>
+    <% number_of_users = @deal.number_of_users.to_i - 1 %>
+    <% available_spots = number_of_users - @approved_users.length %>
+  <div class="ms-auto d-flex flex-column m-4">
+    <img src=<%= @deal.image_path %> alt="" style="width: 800px">
+    <p>Available spots: <%= available_spots %></p>
+    <% if available_spots == 0 %>
+      <p>No available spots!</p>
+    <% elsif @deal.user != current_user && @deal != @user_deal %>
+      <%= link_to "Subscribe Now", deal_subscriptions_path(@deal), data: {turbo_method: :post}, class: "btn btn-primary mt-3" %>
+    <% elsif @deal == @user_deal %>
+      <%= link_to "Subscribed", manage_path, class: "btn btn-primary mt-3 disabled" %>
+    <% else %>
+      <p>This is your deal</p>
+    <% end %>
+  </div>
+</div>
