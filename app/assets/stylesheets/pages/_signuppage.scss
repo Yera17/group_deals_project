@@ -1,0 +1,65 @@
+/* Center the signup wrapper, similar to the login page */
+.custom-signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Similar background color to login page */
+}
+
+/* Center the signup container within the page */
+.custom-signup-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the form inputs are styled uniformly */
+.custom-form-inputs input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+.custom-form-actions button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a hover effect to the button */
+.custom-form-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the error notification */
+.error_notification {
+  margin-bottom: 20px;
+}
+
+/* Style the links at the bottom */
+.custom-signup-container a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff; /* Ensure the link color is always visible */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Optional: Adjust font size */
+}
+
+/* Optional: Add a hover effect to the link */
+.custom-signup-container a:hover {
+  text-decoration: underline;
+}

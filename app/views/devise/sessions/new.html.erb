@@ -1,22 +1,43 @@
-<div class="container">
-  <h2>Log in</h2>
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="login-page">
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+<!-- The login wrapper, which will be centered -->
+<div class="custom-login-wrapper">
+  <div class="custom-login-container">
+    <h2>Log in</h2>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="custom-login-page">
+      <div class="custom-form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+
+        <!-- Updated Remember me section -->
+        <div class="custom-remember-me">
+          <%= f.input :remember_me, as: :boolean, label: false if devise_mapping.rememberable? %>
+          <label for="remember_me">Remember me</label>
+        </div>
+      </div>
+
+      <div class="custom-form-actions">
+        <%= f.button :submit, "Log in" %>
+      </div>
     </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
 </div>
+
+</body>
+</html>

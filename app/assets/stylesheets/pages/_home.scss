@@ -4,7 +4,8 @@
   justify-content: space-between; /* Spreads items across the container */
   padding: 20px; /* Adds padding around the container */
   width: 100%; /* Full width for the container */
-  box-sizing: border-box; /* Ensure padding is included in the total width */
+  box-sizing: border-box;
+  margin-top: 3%;/* Ensure padding is included in the total width */
 }
 
 #categories {
@@ -121,7 +122,6 @@ a {
 .banner {
   background-image: asset-url("banner-background");
   background-size: auto;
-  height: 350px;
   margin: 0;
 }
 
@@ -327,7 +327,62 @@ body {
       }
     }
   }
+
+  /* Specific container styling for GroupDeals */
+.group-deals-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
 }
+
+/* Card container styling */
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+/* Individual bottomcard styling */
+.bottomcard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 45%; /* Adjusts for side-by-side appearance */
+  transition: transform 0.3s ease;
+}
+
+.bottomcard:hover {
+  transform: translateY(-10px); /* Subtle hover effect */
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.5rem;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Description styling */
+.card-description {
+  font-size: 1rem;
+  color: #7A7A7A;
+  line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bottomcard {
+    width: 100%;
+  }
 
 .danger-btn {
   display: inline-block;
@@ -343,4 +398,3 @@ body {
   margin-top: 1rem;
   width: 100%;
   max-width: 250px;
-}
