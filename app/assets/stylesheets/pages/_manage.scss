@@ -29,6 +29,13 @@
   list-style-type: none; /* Remove default list styles */
   margin: 0; /* Remove margin */
   padding: 0; /* Remove padding */
+  .links{
+    color: #333;
+  }
+
+  .links:hover{
+    color: blue;
+  }
 }
 
 .sub-list-group-item {

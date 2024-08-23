@@ -1,27 +1,62 @@
+<% if @category == "mydeals" %>
+  <% if @mydeals.length.positive? %>
+    <div class="container d-flex flex-column">
+      <div class="mb-5">
+        <h1 class="home-title">Your Deals</h1>
+      </div>
+      <div class="row g-3">
+        <% @mydeals.each do |deal| %>
+          <div class="col-12 col-md-6 col-lg-3">
+            <!-- Main container for each deal -->
+            <div class="deal-card">
+              <!-- Image container -->
+              <div class="deal-image-container">
+                <img src="<%= asset_path(deal.image_path) %>" alt="<%= deal.name %>" class="deal-image">
+              </div>
 
-<div class="container d-flex flex-column">
-  <div class="mb-5">
-    <h1 class="home-title">Deals for <%= @category.capitalize %></h1>
-  </div>
-  <div class="row g-3">
-    <% @deals.each do |deal| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <!-- Main container for each deal -->
-        <div class="deal-card">
-          <!-- Image container -->
-          <div class="deal-image-container">
-            <img src="<%= asset_path(deal.image_path) %>" alt="<%= deal.name %>" class="deal-image">
+              <!-- Attributes container -->
+              <div class="deal-attributes-container">
+                <h2 class="deal-title"><%= deal.name %></h2>
+                <p class="deal-description"><%= deal.description %></p>
+                <p class="deal-price">$<%= deal.price %></p>
+                <%= link_to 'View Deal', deal_path(deal), class: 'btn btn-primary' %>
+              </div>
+            </div>
           </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+      <div class="mb-5">
+        <h1 class="home-title">You don't have one!</h1>
+      </div>
+  <% end %>
 
-          <!-- Attributes container -->
-          <div class="deal-attributes-container">
-            <h2 class="deal-title"><%= deal.name %></h2>
-            <p class="deal-description"><%= deal.description %></p>
-            <p class="deal-price">$<%= deal.price %></p>
-            <%= link_to 'View Deal', deal_path(deal), class: 'btn btn-primary' %>
+<% else %>
+  <div class="container d-flex flex-column">
+    <div class="mb-5">
+      <h1 class="home-title">Deals for <%= @category.capitalize %></h1>
+    </div>
+    <div class="row g-3">
+      <% @deals.each do |deal| %>
+        <div class="col-12 col-md-6 col-lg-3">
+          <!-- Main container for each deal -->
+          <div class="deal-card">
+            <!-- Image container -->
+            <div class="deal-image-container">
+              <img src="<%= asset_path(deal.image_path) %>" alt="<%= deal.name %>" class="deal-image">
+            </div>
+
+            <!-- Attributes container -->
+            <div class="deal-attributes-container">
+              <h2 class="deal-title"><%= deal.name %></h2>
+              <p class="deal-description"><%= deal.description %></p>
+              <p class="deal-price">$<%= deal.price %></p>
+              <%= link_to 'View Deal', deal_path(deal), class: 'btn btn-primary' %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

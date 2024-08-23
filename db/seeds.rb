@@ -27,7 +27,7 @@ users = 3.times.map do |i|
   User.create!(
     email: "user#{i+1}@example.com",
     username: "user#{i+1}",
-    password: "password#{i+1}"
+    password: "123456789"
   )
 end
 img_src = ""
@@ -35,22 +35,6 @@ img_src = ""
 # Creating 100 deals
 100.times do |i|
   category = ["music", "video", "TV", "sports", "gaming", "podcast", "audiobook"].sample
-  case category
-    when "music"
-      img_src = "https://static.vecteezy.com/system/resources/previews/000/559/411/large_2x/vector-a-musical-symbol.jpg"
-    when "video"
-      img_src = "https://static.vecteezy.com/system/resources/previews/000/644/657/original/vector-video-icon-symbol-sign.jpg"
-    when "TV"
-      img_src = "https://static.vecteezy.com/system/resources/previews/010/157/977/non_2x/tv-icon-sign-symbol-design-free-png.png"
-    when "sports"
-      img_src = "https://static.vecteezy.com/system/resources/previews/000/348/985/original/vector-indoor-sport-game-athletic-set-icon-symbol-sign-pictogram.jpg"
-    when "gaming"
-      img_src = "https://static.vecteezy.com/system/resources/previews/000/366/871/original/video-game-vector-icon.jpg"
-    when "podcast"
-      img_src = "https://static.vecteezy.com/system/resources/previews/002/157/611/original/illustrations-concept-design-podcast-channel-free-vector.jpg"
-    when "audiobook"
-      img_src = "https://cdn-icons-png.flaticon.com/512/865/865552.png"
-  end
   updated_name = ""
   name_of_each_deal.each do |key, value|
     if key.to_s == category.downcase
